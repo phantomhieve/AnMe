@@ -1,0 +1,9 @@
+package sudokuSolver;
+public class Solver {
+	public boolean solve(int [][]board,int size){
+		int x=-1,y=-1;
+		boolean isEmpty=false;
+		for
+		return true;
+	}
+}
