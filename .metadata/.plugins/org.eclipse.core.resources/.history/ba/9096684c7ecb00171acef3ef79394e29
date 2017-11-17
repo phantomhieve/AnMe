@@ -1,0 +1,55 @@
+package TicTacToe;
+public class test {
+	public static void main(String args[]){
+		BackEnd game = new BackEnd();
+		printBoard();
+	}
+	void printBoard(int [][] board){
+		for(int i=0;i<3;i++){
+			printMargin();
+			for(int j=0;j<3;j++){
+				if(board[i][j]==0)
+					printBlank();
+				else if(board[i][j]==1)
+					printX();
+				else
+					printO();
+			}
+		}
+	}
+	private void printMargin(){
+		for(int i=0;i<19;i++){
+			System.out.printf("-");
+		}
+		System.out.printf("\n");
+	}
+	private void printX(){
+		System.out.printf("|#   #\n");
+		System.out.printf("| # # \n");
+		System.out.printf("|  #  \n");
+		System.out.printf("| # # \n");
+		System.out.printf("|#   #\n");
+	}
+	private void printO(){
+		for(int i=0;i<5;i++){
+			System.out.printf("|#");
+			for(int j=1;j<4;j++){
+				if(i==0 || i==2)
+					System.out.printf("#");
+				else
+					System.out.printf(" ");
+			}
+			System.out.printf("#");
+			System.out.printf("\n");
+		}
+	}
+	private void printBlank(){
+		for(int i=0;i<5;i++){
+			System.out.printf("|\n");
+			for(int j=0;j<5;j++){
+				System.out.printf(" ");
+			}
+			System.out.printf("\n");
+		}
+	}
+}

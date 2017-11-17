@@ -42,9 +42,6 @@ public class Solver {
 		
 		return true;
 	}
-	public int [][] giveAns(){
-		return board;
-	}
 	public boolean solve(){
 		int x=-1,y=-1;
 		boolean isEmpty=false;
