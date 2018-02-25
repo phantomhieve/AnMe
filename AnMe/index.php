@@ -24,6 +24,16 @@
       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <?php
+      //check global variable here
+      if(true){
+        echo '<small id="passwordHelpInline" class="text-muted">
+        <font color="red">Wrong Email or Password !</font>
+      </small>';
+      }
+      ?>
+      
+      
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
