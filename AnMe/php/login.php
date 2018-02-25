@@ -1,19 +1,29 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
+include("config.php");
+include("globalFunctions.php");
+include("links.php");
+
+$user = $_POST["inputEmail"];
+$user_password = $_POST["inputPassword"];
+
 try{
-    //create connection
-    $conn = mmysqli_connect($servername, $username, $password);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    //Check connection from user and pass
-    //if correct
-        //redirect to website
-    //else redirect back to login
+
+    $sql="select * from user where username='".$user."' and password='".$user_password."'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $_SESSION["status_".$user]="true";
+        redirect($main_html);
+    }
+    else{
+        $_SESSION["status_".$user]="false";
+        redirect($root);
+    }
 }
 catch(Exception $e){
     echo $sql . "<br>" . $e->getMessage();
 }
+?>
