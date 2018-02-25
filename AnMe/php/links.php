@@ -7,6 +7,7 @@
     $globalFunctions_php = $link_to_php . "/globalFunctions.php";
     $config_php = $link_to_php . "/config.php"; 
     $login_php = $link_to_php . "/login.php";
+    $main_php = $link_to_php . "/main.php";
 
     $main_html = $link_to_html . "/main.html";
     $addcontent_html = $link_to_html . "/addcontent.html";
