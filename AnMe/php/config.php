@@ -1,8 +1,8 @@
 <?php
-    $servername = "localhost";
-    $username = "id4870226_user";
-    $db_name = "id4870226_anme";
-    $password = "123456";
+    $servername = "sql308.epizy.com";
+    $username = "epiz_21684013";
+    $db_name = $username."_anme";
+    $password = "tX9dARlo8BIz";
 
     try{
         //create connection

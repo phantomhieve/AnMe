@@ -1,5 +1,5 @@
 <?php
-    $root = "http://winizasej.000webhostapp.com";
+    $root = "http://anme4anime.rf.gd";
 
     $link_to_php = $root . "/php";
     $link_to_html = $root . "/html";
@@ -8,6 +8,7 @@
     $config_php = $link_to_php . "/config.php"; 
     $login_php = $link_to_php . "/login.php";
     $main_php = $link_to_php . "/main.php";
+	$signup_php = $link_to_php . "/signup.php";
 
     $main_html = $link_to_html . "/main.html";
     $addcontent_html = $link_to_html . "/addcontent.html";

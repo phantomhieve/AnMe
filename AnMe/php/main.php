@@ -1,10 +1,16 @@
 <?php
-  include("globalFunctions.php");
-  include("links.php");
+include("links.php");
+include("globalFunctions.php");
 
-  start_session();
-  if($_SESSION['status']=='false'){
+try{
+  session_set_cookie_params(0);
+  session_start();
+  if(!isset($_SESSION['status']))
     redirect($root);
+  else if($_SESSION['status']=="false")
+    redirect($root);
+} catch (Exception $e){
+  echo "<br>".$e-getMessage()."<br>";
 }
 ?>
 
@@ -23,30 +29,38 @@
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
   </head>
-  <body>
+  <body onunload="destroy()">
+    <script language="javascript">
+    function destroy()
+    {
+	    window.open('destroy.php');
+    }
+    </script>
+      
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">AnMe</a>
+      <a class="navbar-brand" href="http://anme4anime.rf.gd/php/main.php">AnMe</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="http://anme4anime.rf.gd/html/home.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <!--Show username -->
           <li class="nav-item active">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" href="http://anme4anime.rf.gd/html/profile.html"><?php echo (isset($_SESSION['username']))?$_SESSION['username']:"Otaku"; ?></a>
           </li>
-          <!--Show username -->
           <li class="nav-item">
-            <a class="nav-link active" href="#">Add Content </a>
+            <a class="nav-link active" href="http://anme4anime.rf.gd/html/addcontent.html">Add Content </a>
           </li>
           <!-- Only for moderator hide for others-->
           <li class="nav-item">
-            <a class="nav-link active" href="#">Review </a>
+            <a class="nav-link active" href="http://anme4anime.rf.gd/html/review.html">Review </a>
           </li>
           <!-- Only for moderator hide for others-->
+          <li class="nav-item">
+            <a class="nav-link active" href="http://anme4anime.rf.gd/php/logout.php">Logout</a>
+          </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

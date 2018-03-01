@@ -18,6 +18,55 @@ body {
   background-color: #f5f5f5;
 }
 
+/* For 980px or less */  
+@media screen and (max-width: 980px){  
+  
+    #container {  
+        width: 95%;  
+    }  
+  
+    #leftCol, #centerCol, #rightCol {  
+        float: none;  
+        width: 100%;  
+        padding: 3px;  
+    }  
+  
+    img {  
+        width: 25%;  
+    }  
+}
+
+/* For 480px or less */  
+@media screen and (max-width: 480px){  
+    img {  
+        display: none;  
+    }  
+}
+
+@font-face {
+  font-family: aa;
+  src: url(fonts/animeace/aa.ttf);
+}
+@font-face {
+  font-family: aa_b;
+  src: url(fonts/animeace/aa_b.ttf);
+}
+@font-face {
+  font-family: aa_i;
+  src: url(fonts/animeace/aa_i.ttf);
+}
+@font-face {
+  font-family: kgel;
+  src: url(fonts/kaorigel/kgel.ttf);
+}
+
+h1, h2, h3, h4, h5{
+  font-family:aa;
+}
+p{
+  font-family:kgel;
+}
+
 .form-signin {
   width: 100%;
   max-width: 330px;
