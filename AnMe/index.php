@@ -1,9 +1,9 @@
-
+<?php include("php/links.php");?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=900%">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta name="description" content="Anime,anime list, top anime shows">
     <meta name="author" content="Mayuresh Konda, Atul Khetan">    
   
@@ -15,12 +15,10 @@
   </head>
   
   <body class="text-center">
-    
-    <form class="form-signin" method="post" action = "php/login.php">
-    
-      <h3 style="font-family:kgel">いらっしゃいませ</h3>
-      <p>Infos for anime otaku</p>
-      <img class="mb-4 center" src="image/index2.png" alt="" width="100%" height="100%">
+    <form class="form-signin" method="post" action = "<?php echo $login_php;?>">
+      <h3 style="font-family: aa">いらっしゃいませ</h3>
+      <p style="font-family: kgel">Infos for anime otaku</p>
+      <img class="mb-2 center" src="image/index2.png" alt="" width="200px" height="200px">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       
       <label for="inputEmail" class="sr-only">Email address</label>     
@@ -44,9 +42,9 @@
       </div>
       
       <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
-      <button class="btn btn-lg btn-primary btn-block" onclick="window.location.href='http://anme4anime.rf.gd/php/signup.php'">Sign up</button>
+      <button class="btn btn-lg btn-primary btn-block" type= "button" onclick="window.location.href='<?php echo $signup_php;?>'">Sign up</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-      <small><a href="http://anme4anime.rf.gd/php/logout.php">Clear session</a></small>
+      <small><a href="<?php echo $logout_php;?>">Clear session</a></small>
     </form>
   </body>
 </html>

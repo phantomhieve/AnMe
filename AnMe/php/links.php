@@ -1,5 +1,7 @@
 <?php
-    $root = "http://anme4anime.rf.gd";
+    /* Changed for testing purposes*/ 
+    //$root = "http://anme4anime.rf.gd";
+    $root =""; 
 
     $link_to_php = $root . "/php";
     $link_to_html = $root . "/html";
@@ -9,6 +11,7 @@
     $login_php = $link_to_php . "/login.php";
     $main_php = $link_to_php . "/main.php";
 	$signup_php = $link_to_php . "/signup.php";
+	$logout_php = $link_to_php . "/logout.php";
 
     $main_html = $link_to_html . "/main.html";
     $addcontent_html = $link_to_html . "/addcontent.html";

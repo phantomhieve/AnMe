@@ -1,20 +1,14 @@
 <?php
-include("links.php");
+/*include("links.php");
 include("globalFunctions.php");
 
-try{
-  session_set_cookie_params(0);
-  session_start();
-  if(!isset($_SESSION['status']))
-    redirect($root);
-  else if($_SESSION['status']=="false")
-    redirect($root);
-} catch (Exception $e){
-  echo "<br>".$e-getMessage()."<br>";
-}
+session_start();
+
+if(!isset($_SESSION['status']))
+  redirect($root);
+else if($_SESSION['status']=="false")
+  redirect($root);*/
 ?>
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +17,6 @@ try{
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../image/index2.png">
-    <link href="../css/navbar-top-fixed.css" rel="stylesheet">
     <title>Display</title>
 
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,60 +24,30 @@ try{
   </head>
   <body onunload="destroy()">
     <script language="javascript">
-    function destroy()
-    {
-	    window.open('destroy.php');
-    }
+      function destroy()
+      {
+        window.open('destroy.php');
+      }
     </script>
-      
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="http://anme4anime.rf.gd/php/main.php">AnMe</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="http://anme4anime.rf.gd/html/home.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="http://anme4anime.rf.gd/html/profile.html"><?php echo (isset($_SESSION['username']))?$_SESSION['username']:"Otaku"; ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="http://anme4anime.rf.gd/html/addcontent.html">Add Content </a>
-          </li>
-          <!-- Only for moderator hide for others-->
-          <li class="nav-item">
-            <a class="nav-link active" href="http://anme4anime.rf.gd/html/review.html">Review </a>
-          </li>
-          <!-- Only for moderator hide for others-->
-          <li class="nav-item">
-            <a class="nav-link active" href="http://anme4anime.rf.gd/php/logout.php">Logout</a>
-          </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
+
+    <!-- Navbar Component Added Here -->
+    <?php include 'components/navbar.php';?>
+    <!-- Navbar Component Added Here -->
+    
     <main role="main">
-      <section class="jumbotron text-center">
-        <div class="container" style = "height:150px;">
-          <h1 class="jumbotron-heading">Anime List</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        </div>
-      </section>
+      <!-- Jumbotron component added Here -->
+      <?php include 'components/jumbotron.php';?>
+      <!-- Jumbotron component added Here -->
+
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
-
             <?php
-            /*
-            start = global[counter]*9
-            end = min(start + 9,len(table))
-            */
-            for ($i = 0;$i< 5;$i++){
+              /*
+              start = global[counter]*9
+              end = min(start + 9,len(table))
+              */
+              for ($i = 0;$i< 18;$i++){
                 echo '<div class="col-md-4">';
                 echo '<div class="card mb-4 box-shadow">';
                 //change here for image
@@ -103,7 +66,7 @@ try{
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
-            }
+              }
             ?>
             <div class ="container">
               <div class="btn-group float-right">
@@ -121,18 +84,13 @@ try{
         </div>
       </div>
     </main>
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-      </div>
-    </footer>
-
+    <!--Footer component added here-->
+    <?php include 'components/footer.php'?>
+    <!--Footer component added here-->
+   
+   
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
