@@ -1,5 +1,5 @@
 
-<footer class="text-muted footer fixed-bottom bg-dark">
+<footer class="text-muted fixed-bottom bg-dark">
     <div class="container">
     <p class="float-right">
           <a href="#">Back to top</a>

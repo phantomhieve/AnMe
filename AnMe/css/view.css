@@ -1,0 +1,14 @@
+.img{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: center;
+    /*background: #333A40;*/
+    background: dimgray;
+}
+.text{
+    padding-top: 2rem;
+    border: 3px solid #73AD21;
+}
+.box{
+
+}

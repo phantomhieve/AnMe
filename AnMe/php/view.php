@@ -1,14 +1,8 @@
 <?php
-/*include("links.php");
-include("globalFunctions.php");
-
-session_start();
-
-if(!isset($_SESSION['status']))
-  redirect($root);
-else if($_SESSION['status']=="false")
-  redirect($root);
-*/
+  session_start();
+  if(!isset($_SESSION['user_id'])){
+     header("Location: ../index.php");
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,6 +16,7 @@ else if($_SESSION['status']=="false")
 
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/view.css">
   </head>
   <body onunload="destroy()">
     <script language="javascript">
@@ -34,13 +29,30 @@ else if($_SESSION['status']=="false")
     <!-- Navbar Component Added Here -->
     <?php include 'components/navbar.php';?>
     <!-- Navbar Component Added Here -->
-
-    <h1>Hello world</h1>
+    <div class="row">
+      <!--image field-->
+      <div class="col-md-12">
+        <div class="img">
+          <img src="../image/test.jpg" class = "img-fluid mx-auto d-block" alt="Otaku-Forever">
+        </div>
+      </div>
+      <!--text field-->
+      <div class="container ">
+        <div class="col-md-12">
+          <div class="text">
+            <p>Name</p></br>
+            <p>Name</p></br>
+            <p>Name</p></br>
+            <p>Name</p></br>
+            <p>Name</p></br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style = "padding: 2rem;"></div>
     <!--Footer component added here-->
     <?php include 'components/footer.php'?>
     <!--Footer component added here-->
-   
-   
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

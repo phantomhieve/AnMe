@@ -1,13 +1,8 @@
 <?php
-/*include("links.php");
-include("globalFunctions.php");
-
-session_start();
-
-if(!isset($_SESSION['status']))
-  redirect($root);
-else if($_SESSION['status']=="false")
-  redirect($root);*/
+  session_start();
+  if(!isset($_SESSION['user_id'])){
+     header("Location: ../index.php");
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,7 +42,7 @@ else if($_SESSION['status']=="false")
               start = global[counter]*9
               end = min(start + 9,len(table))
               */
-              for ($i = 0;$i< 18;$i++){
+              for ($i = 0;$i< 5;$i++){
                 echo '<div class="col-md-4">';
                 echo '<div class="card mb-4 box-shadow">';
                 //change here for image
@@ -87,8 +82,6 @@ else if($_SESSION['status']=="false")
     <!--Footer component added here-->
     <?php include 'components/footer.php'?>
     <!--Footer component added here-->
-   
-   
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

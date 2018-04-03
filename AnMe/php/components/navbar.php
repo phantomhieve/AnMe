@@ -7,7 +7,7 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
             <a class="nav-link" href="<?php include("links.php"); echo $profile_html?>">
-              <?php echo (isset($_SESSION['username']))?$_SESSION['username']:"Otaku"; ?>
+              <?php echo (isset($_SESSION['user_name']))?$_SESSION['user_name']:"Otaku"; ?>
             </a>
         </li>
         <li class="nav-item">
@@ -16,8 +16,11 @@
         <!-- Only for moderator hide for others-->
         <?php
             //set a variable for moderator
-            $moderator = True;
-            if ($moderator){
+            session_start();
+            $moderator = 0;
+            if(isset($_SESSION['user_moderator']))
+                $moderator = $_SESSION['user_moderator'];
+            if ($moderator==1){
                 echo "<li class= \" nav-item \">";
                 echo " <a class= \" nav-link active \" href=\" $review_html \"> Review </a>";
                 echo "</li>";
@@ -25,7 +28,7 @@
         ?>
         <!-- Only for moderator hide for others-->
         <li class="nav-item">
-            <a class="nav-link active" href="<?php include("links.php"); echo $logout_php?>">Logout</a>
+            <a class="nav-link active" href="includes/logout.inc.php">Logout</a>
         </li>
     </ul>
         <!--- Lets leave this for Now
