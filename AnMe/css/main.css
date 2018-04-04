@@ -34,17 +34,11 @@ body {
   padding-top: 3.5rem;
 }
 @media (max-width: 780px) {
-  body {
-    margin-bottom: 0px;
-  }
   .fixed-bottom{
     position: relative;
   }
 }
 @media (min-width:781px) {
-  body {
-    margin-bottom: 50px;
-  }
   .fixed-bottom{
     position: fixed;
   }

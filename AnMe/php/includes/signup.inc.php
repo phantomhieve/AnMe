@@ -4,8 +4,8 @@
         $user_name = mysqli_real_escape_string($conn, $_POST['inputUser']);
         $user_email = mysqli_real_escape_string($conn, $_POST['inputEmail']);
         $user_pass = mysqli_real_escape_string($conn, $_POST['inputPassword']);
-        
-        $sql = "SELECT * FROM users WHERE user_name = '$user_name'";
+        //for checking user_name or emial
+        $sql = "SELECT * FROM users WHERE user_name = '$user_name' OR user_email = '$user_email'";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck > 0){

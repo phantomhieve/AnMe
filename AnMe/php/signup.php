@@ -35,7 +35,6 @@
     <form name= "signup" class="form-signin" method="POST" action = "includes/signup.inc.php" onsubmit="return validateForm()">
       <img class="mb-4" src="../image/index2.png" alt="" width="200" height="200">
       <h1 class="h3 mb-3 font-weight-normal">Enter Details</h1>
-      
       <label for="inputUser" class="sr-only">User Name</label>
       <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="User Name" required>
       <label for="inputEmail" class="sr-only">Email address</label> 
@@ -44,7 +43,6 @@
       <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
       <label for="inputRePassword" class="sr-only">Re - Password</label>
       <input type="password" id="inputRePassword" name = "inputRePassword"class="form-control" placeholder="Re - Password" required>
-      
       <?php
       if(!empty($_REQUEST['signup']) && $_REQUEST['signup']=='usertaken'){
         echo '<small id="passwordHelpInline" class="text-muted">

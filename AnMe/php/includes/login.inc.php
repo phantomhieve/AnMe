@@ -24,8 +24,7 @@
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['user_name'] = $row['user_name'];
                     $_SESSION['user_moderator'] = $row['user_moderator'];
-                    //header("Location: ../../index.php?login=success");
-                    header("Location: ../main.php");
+                    header("Location: ../main.php?page=1");
                     exit();
                 }
             }

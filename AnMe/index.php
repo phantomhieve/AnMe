@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta name="description" content="Anime,anime list, top anime shows">
-    <meta name="author" content="Mayuresh Konda, Atul Khetan">    
+    <meta name="author" content=" Atul Khetan ,Mayuresh Konda">    
     <title>Login</title>
     <link rel="icon" href="image/index.png">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,6 @@
       <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="User Name" required >
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
-      
       <?php        
       	if(!empty($_REQUEST['login']) && $_REQUEST['login']=='error'){
           	echo '<small id="passwordHelpInline" class="text-muted">
