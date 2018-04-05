@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if(!isset($_SESSION['user_id'])){
+  if(!isset($_SESSION['user_name'])){
      header("Location: ../index.php");
   }
 ?>
@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="<?php include("links.php"); echo $profile_html?>">
+                <a class="nav-link" href="profile.php">
                 <?php echo (isset($_SESSION['user_name']))?$_SESSION['user_name']:"Otaku"; ?>
                 </a>
             </li>

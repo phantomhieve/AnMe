@@ -13,13 +13,19 @@
             exit();
         }
         else{
+            session_start();
             //HASHING THE PASSWOD
             $hashedPwd = password_hash($user_pass, PASSWORD_DEFAULT);
             //inserting into data_base
             $sql = "INSERT INTO users ( user_name ,user_email ,user_pass) 
             VALUES('$user_name','$user_email','$hashedPwd');";
             mysqli_query($conn, $sql);
-            header("Location: ../../index.php?signup=success");
+            $_SESSION['user_name'] = $user_name;
+            $_SESSION['user_email'] = $user_email;
+            $_SESSION['user_moderator'] = 0;
+            $_SESSION['signup'] = true;
+            header("Location: ../profile.edit.php?signup=success");
+            exit();
         } 
     }
     else{

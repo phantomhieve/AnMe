@@ -25,17 +25,15 @@
             
             <?php
                 //need to change here for total pages globals
-                $total_pages = 2;
+                $total_pages = 22;
 
-                $start = 0;
-                $can_go = min(((bool)($total_pages/5))*5,$total_pages);
+                $page = 1;
                 if(!empty($_REQUEST['page']))
-                    $start = $_REQUEST['page'];
-                $start =max($start,1);
-                $start = (ceil($start/5)-1)*5+1;
-                $end = min($start+$can_go,$total_pages+1);
-                if($start>$end-$can_go)
-                    $start = $end-5;
+                    $page = max($_REQUEST['page'],1);
+                $page = min($page,$total_pages);
+                $start = (int)(ceil($page/5)-1);
+                $start = $start*5+1;
+                $end = min($start+5,$total_pages+1);
                 for($i= $start;$i<$end;$i++){
                     if($i==$_REQUEST['page'])
                         echo "<li class=\"page-item active\">";
@@ -48,7 +46,7 @@
             <li class="page-item"><a class="page-link" href="
                 <?php 
                     //need to change here for total pages globals
-                    $total_pages = 2;
+                    $total_pages = 22;
                     
                     $page =1;
                     if(!empty($_REQUEST['page']))

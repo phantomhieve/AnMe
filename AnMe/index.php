@@ -21,18 +21,13 @@
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       
       <label for="inputUser" class="sr-only">User Name</label>     
-      <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="User Name" required >
+      <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="User Name / Email Address" required >
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
       <?php        
       	if(!empty($_REQUEST['login']) && $_REQUEST['login']=='error'){
           	echo '<small id="passwordHelpInline" class="text-muted">
           		<font color="red">Wrong Email or Password !</font>
-        		</small>';
-        }
-        else if(!empty($_REQUEST['signup']) && $_REQUEST['signup']=='success'){
-          echo '<small id="passwordHelpInline" class="text-muted">
-          		<font color="green">Successfully Signedup</font>
         		</small>';
         }
       ?>
