@@ -1,3 +1,0 @@
-INDEX VERSION 1.130+/Users/atulkhetan/Desktop/github/projects/.metadata/.plugins/org.eclipse.jdt.core
-2840520091.index
-967415175.index
