@@ -40,7 +40,6 @@
                 <a class="nav-link active" href="<?php include("links.php"); echo $addcontent_html?>">Add Content </a>
             </li>
             <?php
-                session_start();
                 $moderator = 0;
                 if(isset($_SESSION['user_moderator']))
                     $moderator = $_SESSION['user_moderator'];

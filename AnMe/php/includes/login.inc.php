@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if(isset($_POST['submit'])){
         include_once 'db.inc.php';
         $user_name = mysqli_real_escape_string($conn, $_POST['inputUser']);
@@ -21,6 +20,7 @@
                 }
                 elseif($hashedPwdCheck == true){
                     //login the user here
+                    session_start();
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['user_name'] = $row['user_name'];
                     $_SESSION['user_moderator'] = $row['user_moderator'];

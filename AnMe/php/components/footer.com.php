@@ -4,8 +4,8 @@
           <a href="#">Back to top</a>
         </p>
         <!-- The content must be same size or need will mess up css -->
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <p>&copy; Atul and Mayuresh</p>
+        <p>Reach out at khetanatulz@gmail.com, mak17593@outlook.com</p>
     </div>
 </footer>
 

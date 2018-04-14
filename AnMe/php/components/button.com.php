@@ -1,3 +1,13 @@
+<?php
+// This part caused some error in *my pc*... check in yours
+// include_once '../includes/db.inc.php';
+// $total_pages = mysqli_fetch_array($conn->query("select count(name) from anime_list"))[0];
+$total_pages = 21; 
+
+$elements_per_page = 3;
+                    
+?>
+
 <style>
 @media (min-width:781px) {
   .padButton{
@@ -23,17 +33,16 @@
             ">Previous</a>
             </li>
             
-            <?php
-                //need to change here for total pages globals
-                $total_pages = 22;
-
+            <?php 
                 $page = 1;
                 if(!empty($_REQUEST['page']))
                     $page = max($_REQUEST['page'],1);
                 $page = min($page,$total_pages);
                 $start = (int)(ceil($page/5)-1);
                 $start = $start*5+1;
-                $end = min($start+5,$total_pages+1);
+
+                // changed the way the $total_pages will be calculated
+                $end = min($start+5,$total_pages/$elements_per_page + 1);
                 for($i= $start;$i<$end;$i++){
                     if($i==$_REQUEST['page'])
                         echo "<li class=\"page-item active\">";
@@ -45,10 +54,7 @@
             
             <li class="page-item"><a class="page-link" href="
                 <?php 
-                    //need to change here for total pages globals
-                    $total_pages = 22;
-                    
-                    $page =1;
+                    $page = 1;
                     if(!empty($_REQUEST['page']))
                         $page = $_REQUEST['page']+1;
                     $page = min($page,$total_pages);

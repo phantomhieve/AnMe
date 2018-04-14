@@ -14,7 +14,7 @@
         }
         else{
             session_start();
-            //HASHING THE PASSWOD
+            //HASHING THE PASSWORD
             $hashedPwd = password_hash($user_pass, PASSWORD_DEFAULT);
             //inserting into data_base
             $sql = "INSERT INTO users ( user_name ,user_email ,user_pass) 
@@ -23,7 +23,7 @@
             $_SESSION['user_name'] = $user_name;
             $_SESSION['user_email'] = $user_email;
             $_SESSION['user_moderator'] = 0;
-            $_SESSION['signup'] = true;
+            $_SESSION['user_email'] = $user_email;
             header("Location: ../profile.edit.php?signup=success");
             exit();
         } 

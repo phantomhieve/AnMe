@@ -7,17 +7,21 @@
         $user_gender = mysqli_real_escape_string($conn, $_POST['inputGender']);
         //user image not working
         $user_image = mysqli_real_escape_string($conn, $_POST['inputImage']);
-        if(isset($_SESSION['signup'])){
-            $user_name = $_SESSION['user_name'];
-            $sql = "UPDATE users SET user_firstName ='$user_firstName', user_lastName = '$user_lastName',user_gender = '$user_gender',
-            user_image = '$user_image'
-            WHERE user_name = '$user_name';";
-            mysqli_query($conn, $sql);
-            header("Location: ../main.php?page=1");
+        $user_name = $_SESSION['user_name'];
+        $sql = "UPDATE users SET user_firstName ='$user_firstName', user_lastName = '$user_lastName',user_gender = '$user_gender',
+        user_image = '$user_image'
+        WHERE user_name = '$user_name';";
+        mysqli_query($conn, $sql);
+        if(isset($_SESSION['edit']) && $_SESSION['edit']= true){
+            header("Location: ../profile.php?edit=success");
             exit();
         }
         else{
-            //In case person want to change details need to implemet here
+            session_start();
+            $_SESSION['user_firstName'] = $user_firstName;
+            $_SESSION['user_lastName'] = $user_lastName;
+            $_SESSION['user_gender'] = $user_gender;
+            $_SESSION['user_contribution'] = 0;
             header("Location: ../main.php?page=1");
             exit();
         }

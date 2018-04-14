@@ -29,6 +29,17 @@
         
             <!-- right column -->
             <div class="col-md-9 personal-info">
+
+                <div class="alert alert-info alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a> 
+                    <i class="fa fa-coffee"></i>
+                    <?php
+                        if(!empty($_REQUEST['edit']) && $_REQUEST['edit']=='success')
+                            echo "<strong>Information Updated</strong> ";
+                        else
+                            echo "Hello <strong>".$_SESSION['user_name']."</strong>"
+                    ?>
+                </div>
                 <u><h3>Otaku <?php echo $_SESSION['user_name'];?></h3></u>
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
@@ -72,7 +83,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
                         <div class="container">
-                            <h4>Toatl Contributions: <h4>
+                            <h4>Total Contributions: <h4>
                         </div>
                     </div>
                     <div class="col-xs-6 col-md-6">
@@ -83,7 +94,7 @@
                 </div>
                 <hr>
                 <div class="col-md-8 text-center">
-                    <button class="btn btn-primary btn-lg" onclick = "">Edit</button>
+                    <button class="btn btn-primary btn-lg" onclick="location.href = 'profile.edit.php?edit=true'">Edit</button>
                 </div>
             </div>
     </div>

@@ -9,6 +9,11 @@
 <!-- Navbar Component Added Here -->
 <?php include 'components/header.com.php';?>
 <!-- Navbar Component Added Here -->
+<?php
+    if(!empty($_REQUEST['edit']) && $_REQUEST['edit']=='true'){
+        $_SESSION['edit'] = true;
+    }
+?>
 <main role = "main">
     <div class="container">
         <h1>
@@ -44,50 +49,36 @@
                 <h3>Personal info</h3>
                 <form class="form-horizontal" role="form" name ="profileEdit" method="POST" action = "includes/profile.inc.php">
                     <?php
-                        function printTags($data,$till){
-                            for($i=0;$i<$till;$i++){
-                                echo "<div class=\"form-group\">
-                                <label class=\"col-lg-3 control-label\">".$data[$i][0]."</label><div class=\"col-lg-8\">
-                                <input class=\"form-control\" type=\"".$data[$i][1]."\" value=\"".
-                                $data[$i][3]."\" name=\"".$data[$i][2]. "\" required></div></div>";
-                            }
-                        }
-                        $array = array(
+                        $data = array(
                             array('First name:','text','inputFirstName',''),
                             array('Last name:','text','inputLastName','')
                         );
-                        printTags($array,2);
+                        if(empty($_REQUEST['signup'])){
+                            $data[0][3] = $_SESSION['user_firstName'];
+                            $data[1][3] = $_SESSION['user_lastName'];
+                        }
+                        for($i=0;$i<2;$i++){
+                            echo "<div class=\"form-group\">
+                            <label class=\"col-lg-3 control-label\">".$data[$i][0]."</label><div class=\"col-lg-8\">
+                            <input class=\"form-control\" type=\"".$data[$i][1]."\" value=\"".
+                            $data[$i][3]."\" name=\"".$data[$i][2]. "\" required></div></div>";
+                        }
                     ?>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Gender:</label>
                         <div class="col-lg-8">
                             <div class="ui-select">
                                 <select id="user_time_zone" class="form-control" name="inputGender" >
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <?php
-                        if(empty($_REQUEST['signup'])){
-                            session_start();
-                            $array = array(
-                                array('Email:','email','inputEmail',$_SESSION['user_email']),
-                                array('Password:','password','inputPassowrd',''),
-                                array('Confirm password:','password','inputRePassword','')
-                            );
-                            printTags($array,3);
-                        }
-                    ?>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
                             <button class="btn btn-success" name= "submit" type="submit">Save Changes</button>
-                            <?php
-                                if(empty($_REQUEST['signup']))
-                                    echo "<input type=\"reset\" class=\"btn btn-default\" value=\"Cancel\">"; 
-                            ?>
                         </div>
                     </div>
                 </form>
