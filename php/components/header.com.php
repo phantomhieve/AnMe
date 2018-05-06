@@ -15,6 +15,7 @@
     <title>Display</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cards.css">
   </head>
   <body onunload="destroy()">
     <script language="javascript">

@@ -9,19 +9,20 @@ $elements_per_page = 3;
 ?>
 
 <style>
-@media (min-width:781px) {
-  .padButton{
+.pageB{
+    margin-top: 2rem; 
+    margin-right: 2rem;
     padding-bottom: 2.5rem;
-  }
-  .page-link:hover{
-        background-color: #17a2b8;
-        color: #fff;
-    }
+}
+.page-link:hover{
+    background-color: #17a2b8;
+    color: #fff;
 }
 </style>
-<div class="row">
+
+<div class="row pageB">
     <div class="col-md-12 padButton" >
-        <ul class="pagination float-right">
+        <ul class="pagination float-right place">
             <li class="page-item"><a class="page-link" href="
                 <?php 
                     $page =1;

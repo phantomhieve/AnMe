@@ -23,10 +23,7 @@
 
 footer {
   padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-}
-footer p {
-  margin-bottom: .25rem;
+  padding-bottom: 0.35rem;
 }
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
@@ -41,5 +38,8 @@ body {
 @media only screen and (min-width: 768px) {
   .fixed-bottom{
     position: fixed;
+  }
+  body{
+    padding-bottom: 5rem;
   }
 }
