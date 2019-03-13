@@ -1,15 +1,5 @@
 <?php
-    
-    // $dbServername = "sql308.epizy.com";
-    // $dbUsername = "epiz_21684013";
-    // $dbName = $dbUsername."_anme";
-    // $dbPassword = "tX9dARlo8BIz";
-
-    $dbServername = "localhost";
-    $dbUsername = "root";
-    $dbPassword = "root";
-    $dbName = "anme";
-
+    include 'credential.inc.php';
     try{
         //create connection
         $conn = mysqli_connect($dbServername,$dbUsername,$dbPassword,$dbName);
